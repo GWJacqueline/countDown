@@ -22,9 +22,14 @@
         <script>
             $(function() {
                 $("#showClock").click(function() {
+                    var old = new Date().getTime();
                     var count = 30;
                     var inter = setInterval(clock, 1000);
                     function clock() {
+                        var now = new Date().getTime();
+                        var count =
+                            30 -
+                            Math.floor((parseInt(now) - parseInt(old)) / 1000);
                         count--;
                         $(".clock").html(count);
                         if (count < 1) {
