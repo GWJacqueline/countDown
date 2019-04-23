@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
-        />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="black-translucent"
-        />
-        <meta name="apple-touch-fullscreen" content="yes" />
-        <title>切换后台倒计时</title>
-    </head>
-    <body>
-        <button id="showClock">点击查看倒计时</button>
-        <p class="clock"></p>
-        <script src="js/jquery.min.js"></script>
-        <script>
-            $(function() {
-                $("#showClock").click(function() {
-                    var old = new Date().getTime();
-                    var count = 30;
-                    var inter = setInterval(clock, 1000);
-                    function clock() {
-                        //计时器实时计算当前时间
-                        var now = new Date().getTime();
-                        var count =
-                            30 -
-                            Math.floor((parseInt(now) - parseInt(old)) / 1000);
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <title>切换后台倒计时</title>
+  </head>
+  <body>
+    <button id="showClock">点击查看倒计时</button>
+    <p class="clock"></p>
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <input type="text" style="height:50px;" />
+    <script src="js/jquery.min.js"></script>
+    <script>
+      $(function() {
+        $("#showClock").click(function() {
+          var old = new Date().getTime();
+          var count = 30;
+          var inter = setInterval(clock, 1000);
+          function clock() {
+            //计时器实时计算当前时间
+            var now = new Date().getTime();
+            var count = 30 - Math.floor((parseInt(now) - parseInt(old)) / 1000);
 
-                        $(".clock").html(count);
-                        if (count < 1) {
-                            clearInterval(inter);
-                        }
-                    }
-                });
-            });
-        </script>
-    </body>
+            $(".clock").html(count);
+            if (count < 1) {
+              clearInterval(inter);
+            }
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
